@@ -6,7 +6,7 @@ const testCyclerThatCanCycleOneElement = function() {
   assert.equal(1,cycleOne());
   assert.equal(1,cycleOne());
   assert.equal(1,cycleOne());
-}
+};
 
 const testCycleTwoElements = function() {
   let cycleColours=makeCycler(["black","white"]);
@@ -14,7 +14,7 @@ const testCycleTwoElements = function() {
   assert.equal("white",cycleColours());
   assert.equal("black",cycleColours());
   assert.equal("white",cycleColours());
-}
+};
 
 const testCycleOnlyElementsGivenInitiallyEvenIfAnElementAddedLater = function() {
   let colours = ["black","white","red"];
@@ -24,7 +24,7 @@ const testCycleOnlyElementsGivenInitiallyEvenIfAnElementAddedLater = function() 
   assert.equal("red",cycleColours());
   colours.push("yellow");
   assert.equal("black",cycleColours());
-}
+};
 
 const testCycleOnlyElementsGivenInitiallyEvenIfModifiedLater = function() {
   let colours = ["black","white"];
@@ -33,11 +33,13 @@ const testCycleOnlyElementsGivenInitiallyEvenIfModifiedLater = function() {
   assert.equal("white",cycleColours());
   colours[0] = "yellow";
   assert.equal("black",cycleColours());
-}
+};
 
 const runTests = function() {
-  if(!makeCycler)
+  if(!makeCycler) {
+    console.log("Function 'makeCycler' in not implemented yet. Not running tests.");
     return;
+  }
 
   testCyclerThatCanCycleOneElement();
   console.log("testCyclerThatCanCycleOneElement passed");
@@ -50,6 +52,6 @@ const runTests = function() {
 
   testCycleOnlyElementsGivenInitiallyEvenIfModifiedLater();
   console.log("testCycleOnlyElementsGivenInitiallyEvenIfModifiedLater passed");
-}
+};
 
 runTests();

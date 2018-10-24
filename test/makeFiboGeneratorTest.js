@@ -9,7 +9,7 @@ const testFiboGeneratorWithDefaultArgs = function() {
   assert.equal(2,getNextFiboNumber());
   assert.equal(3,getNextFiboNumber());
   assert.equal(5,getNextFiboNumber());
-}
+};
 
 const testFiboGeneratorWithASingleArg = function() {
   let getNextFiboNumber = makeFiboGenerator(2);
@@ -19,7 +19,7 @@ const testFiboGeneratorWithASingleArg = function() {
   assert.equal(4,getNextFiboNumber());
   assert.equal(6,getNextFiboNumber());
   assert.equal(10,getNextFiboNumber());
-}
+};
 
 const testFiboGeneratorWithTwoArgs = function() {
   let getNextFiboNumber = makeFiboGenerator(1,3);
@@ -28,7 +28,7 @@ const testFiboGeneratorWithTwoArgs = function() {
   assert.equal(4,getNextFiboNumber());
   assert.equal(7,getNextFiboNumber());
   assert.equal(11,getNextFiboNumber());
-}
+};
 
 const testMultipleFiboGenerators = function() {
   let getNextFiboNum_1 = makeFiboGenerator(1,3);
@@ -44,11 +44,13 @@ const testMultipleFiboGenerators = function() {
   assert.equal(4,getNextFiboNum_2());
   assert.equal(6,getNextFiboNum_2());
   assert.equal(10,getNextFiboNum_2());
-}
+};
 
 const runTests = function() {
-  if(!makeFiboGenerator)
+  if(!makeFiboGenerator) {
+    console.log("Function 'fiboGenerator' in not implemented yet. Not running tests.");
     return;
+  }
 
   testFiboGeneratorWithDefaultArgs();
   console.log("testFiboGeneratorWithDefaultArgs passed");
@@ -61,6 +63,6 @@ const runTests = function() {
 
   testMultipleFiboGenerators();
   console.log("testMultipleFiboGenerators passed");
-}
+};
 
 runTests();
