@@ -1,4 +1,22 @@
-const makeConstant = undefined;
+const makeConstant = function(input) {
+  return constantlyReturnTwo  = function() {
+    return input;
+  }
+
+  return constantlyReturnString = function() {
+    return input;
+  }
+
+  return constantlyReturnArray = function() {
+    return input;
+  }
+
+  return constantlyReturnObject = function() {
+    return input;
+  }
+}
+
+
 const makeCounterFromN = undefined;
 const makeCounterFromZero = undefined;
 const makeDeltaTracker = undefined;
