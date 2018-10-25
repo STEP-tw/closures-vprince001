@@ -32,6 +32,7 @@ const runTests = function() {
 
   testTrackerWithNegativeDeltaValue();
   console.log("testTrackerWithNegativeDeltaValue passed");
+  
 };
 
 runTests();

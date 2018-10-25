@@ -42,7 +42,20 @@ const makeCounterFromZero = function() {
   }
 }
 
-const makeDeltaTracker = undefined;
+const makeDeltaTracker = function(old) {
+  let deltaTracker = {old:0, delta:0, new:0};
+  return trackDelta = function(delta) {
+    deltaTracker.old = old;
+    deltaTracker.delta = delta;
+    if(delta == undefined) {
+      deltaTracker.delta = 0;
+    }
+    deltaTracker.new = deltaTracker.old + deltaTracker.delta;
+    old = deltaTracker.new;
+    return deltaTracker;
+  }
+}
+
 const makeFiboGenerator = undefined;
 const makeCycler = undefined;
 const curry = undefined;
