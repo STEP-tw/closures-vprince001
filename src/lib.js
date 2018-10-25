@@ -56,7 +56,31 @@ const makeDeltaTracker = function(old) {
   }
 }
 
-const makeFiboGenerator = undefined;
+const makeFiboGenerator = function(input1, input2) {
+  let limit = 1;
+
+  return getNextFiboNumber = function() {
+    let numToMultiply = input1;
+    if(numToMultiply == undefined || input2 != undefined){
+      numToMultiply = 1;
+    }
+
+    let firstTerm = input1;
+    let secondTerm = input2;
+    if(input1 == undefined || input2 == undefined) {
+      firstTerm = 0;
+      secondTerm = 1;
+    }
+    for(let term = 1; term < limit; term++){
+      sum = firstTerm + secondTerm;
+      firstTerm = secondTerm;
+      secondTerm = sum;
+    }
+    limit++;
+    return firstTerm*numToMultiply;
+  }
+}
+
 const makeCycler = undefined;
 const curry = undefined;
 const compose = undefined;
