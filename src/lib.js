@@ -100,7 +100,13 @@ const curry = function(operation, operand) {
   }
 };
 
-const compose = undefined;
+const compose = function(firstFunc, secondFunc){
+  return function(firstCollection, secondCollection) {
+    let output = secondFunc(firstCollection, secondCollection);
+    let result = firstFunc(output);
+    return result;
+  }
+};
 
 exports.makeConstant=makeConstant;
 exports.makeCounterFromZero=makeCounterFromZero;
