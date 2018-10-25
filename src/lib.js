@@ -16,8 +16,25 @@ const makeConstant = function(input) {
   }
 }
 
+const makeCounterFromN = function(input) {
+  let count = input;
+  return countApples = function() {
+    return count++;
+  }
 
-const makeCounterFromN = undefined;
+  return countMangoes = function() {
+    return count++;
+  }
+
+  return countOranges = function() {
+    return count++;
+  }
+
+  return countGrapes = function() {
+    return count++;
+  }
+};
+
 const makeCounterFromZero = undefined;
 const makeDeltaTracker = undefined;
 const makeFiboGenerator = undefined;
