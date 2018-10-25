@@ -94,7 +94,12 @@ const makeCycler = function(inputArray) {
   }
 };
 
-const curry = undefined;
+const curry = function(operation, operand) {
+  return function(value1,value2) {
+    return operation(operand,value1,value2);
+  }
+};
+
 const compose = undefined;
 
 exports.makeConstant=makeConstant;
