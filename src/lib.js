@@ -79,9 +79,21 @@ const makeFiboGenerator = function(input1, input2) {
     limit++;
     return firstTerm*numToMultiply;
   }
-}
+};
 
-const makeCycler = undefined;
+const makeCycler = function(inputArray) {
+  let index = 0;
+  let cycleArray = inputArray.slice("");
+  return function() {
+    indexToPrint = index;
+    index++;
+    if(index == cycleArray.length){
+      index = 0;
+    }
+    return cycleArray[indexToPrint];
+  }
+};
+
 const curry = undefined;
 const compose = undefined;
 
