@@ -9,7 +9,7 @@ const concatWith=function(arrayToConcatWith,anotherArray) {
   return arrayToConcatWith.concat(anotherArray);
 };
 
-const testcomposeTwoFunctionsThatTakesOneArg = function() {
+const testComposeTwoFunctionsThatTakesOneArg = function() {
   let lastPosition=compose(decrement,lengthOf);
   assert.equal(0,lastPosition([1]));
   assert.equal(1,lastPosition([1,2]));
@@ -17,7 +17,7 @@ const testcomposeTwoFunctionsThatTakesOneArg = function() {
   assert.equal(4,lastPosition("abcde"));
 };
 
-const testcomposeTwoFunctionsThatTakesTwoArgs = function() {
+const testComposeTwoFunctionsThatTakesTwoArgs = function() {
   let concatNonZeroValues=compose(removeZeroes,concatWith);
   assert.deepEqual([1],concatNonZeroValues([1],[0]));
   assert.deepEqual([1],concatNonZeroValues([0],[1]));
@@ -31,11 +31,11 @@ const runTests = function() {
     return;
   }
 
-  testcomposeTwoFunctionsThatTakesOneArg();
-  console.log("testcomposeTwoFunctionsThatTakesOneArg passed");
+  testComposeTwoFunctionsThatTakesOneArg();
+  console.log("testComposeTwoFunctionsThatTakesOneArg passed");
 
-  testcomposeTwoFunctionsThatTakesTwoArgs();
-  console.log("testcomposeTwoFunctionsThatTakesTwoArgs passed");
+  testComposeTwoFunctionsThatTakesTwoArgs();
+  console.log("testComposeTwoFunctionsThatTakesTwoArgs passed");
 };
 
 runTests();
