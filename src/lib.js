@@ -61,7 +61,7 @@ const curry = function(combiner, initialValue) {
 const compose = function(firstOperation, secondOperation){
   return function(firstCollection, secondCollection) {
     let output  = firstOperation(secondOperation(firstCollection, secondCollection));
-    return result;
+    return output;
   };
 };
 
